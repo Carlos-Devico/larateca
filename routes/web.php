@@ -33,5 +33,5 @@ Route::delete('/autores/{autor}', [AutorController::class, 'destroy']);
 
 
 Route::get('/', function () {
-    return view('home');
+    return view('index');
 });
