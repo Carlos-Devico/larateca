@@ -31,24 +31,57 @@
         /* Estilo personalizado */
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #1d272d;
+            background: linear-gradient(to bottom right, #933EFF 5%, #770fbd 56%, #582599 100%);
             /* Cor de fundo do corpo */
             color: #dc1d30;
             /* Cor do texto */
         }
 
+        
         .navbar-brand img {
-            max-width: 35px;
+            max-width: 45px;
             vertical-align: middle;
         }
+        
+        
+        {{--  NAVBAR AQUI  --}}
+        /* Estilos da barra de navegação */
+        .navbar {
+            background: linear-gradient(to bottom right, #240947, #371b5c);
+            padding: 10px;
+        }
 
-        .navbar-dark {
-            background-color: #36263d;
-            /* Altera a cor do navbar */
+        /* Estilos do campo de pesquisa */
+        .search-container {
+            float: right;
+        }
+
+        /* Estilos do campo de texto */
+        .search-input {
+            padding: 8px;
+            margin-top: 8px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Estilos do ícone de pesquisa */
+        .search-icon {
+           
+            margin-top: 20px;
+            margin-right: 16px;
+            margin-left: 16px;
+            color: rgb(190, 31, 31);
+        }
+
+        /* Estilo do ícone de pesquisa quando hover */
+        .search-icon:hover {
+            color: #d85f0e;
+            /* Altere a cor conforme necessário */
+            cursor: pointer;
         }
 
         .list-group {
-            background-color: #d23545;
+            background: linear-gradient(to bottom right, #933EFF 5%, #5f3a8b 56%, #461587 100%);
             /* Altera a cor do navbar */
             padding-left: 10px;
         }
@@ -69,8 +102,8 @@
             position: fixed;
             bottom: 0;
             width: 100%;
-            background-color: #36263d;
-            color: white;
+            background: linear-gradient(to bottom right, #240947, #371b5c);
+            color: #dc1d30;
             text-align: center;
             padding: 10px 0;
         }
@@ -96,20 +129,20 @@
             transition: all 0.3s ease;
         }
 
-        /* Brilho ao passar o mouse */
+        /* criar o brilho ao passar o mouse */
         .list-group-item:hover {
-            background-color: #ee833b;
+            background-color: #9a80f9;
             /* Altere a cor conforme necessário */
             transition: background-color 0.3s ease;
         }
 
-        /* Efeito de tremor ao ser selecionado */
+        /* criar efeito de tremor ao ser selecionado */
         .list-group-item:active {
             animation: shake 0.5s;
             /* Utiliza a animação "shake" */
         }
 
-        /* Define a animação de tremor */
+        /* --- Criar o tremor --- */
         @keyframes shake {
             0% {
                 transform: translateX(0);
@@ -132,24 +165,19 @@
             }
         }
 
-        /* Estilos para os cards */
+        /* set geral para os cards */
         .card {
             margin-bottom: 20px;
-            height: 150px;
-            /* Define uma altura fixa para os cards */
+            height: 120px;
             position: relative;
-            /* Adiciona posição relativa para os cards */
             border-radius: 15px;
-            /* Adiciona borda arredondada aos cards */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            /* Adiciona sombra aos cards */
             transition: box-shadow 0.3s ease;
-            /* Adiciona transição suave para a sombra */
         }
 
         .card:hover {
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            /* Aumenta a sombra ao passar o mouse */
+
         }
 
         /* Estilo para o conteúdo dos cards */
@@ -162,16 +190,20 @@
         }
 
         .card-title {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
         }
 
         .card-text {
-            font-size: 1.2rem;
+            font-size: 1rem;
         }
 
         /* Estilos para os cards gradientes */
         .gradient-1 {
-            background: linear-gradient(45deg, #dc1d30, #36263d);
+            background: linear-gradient(45deg, #386666, #5e9596);
+
+
+            background: linear-gradient(45deg, #95ff00, #5e9596);
+            ;
             /* Gradiente 1 */
         }
 
@@ -181,13 +213,26 @@
         }
 
         .gradient-3 {
-            background: linear-gradient(45deg, #dc1d30, #7b4594);
+            background: linear-gradient(45deg, #FFDAD9, #5D3F3F);
             /* Gradiente 3 */
         }
 
         .gradient-4 {
             background: linear-gradient(45deg, #dc1d30, #ff6347);
             /* Gradiente 4 */
+        }
+
+        /* Estilo da linha vermelha na lateral esquerda do menu quando o mouse estiver sobre um item do submenu */
+        .list-group-item.submenu-hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 10px;
+            /* Largura da linha */
+            background-color: #95ff00;
+            /* Cor da linha vermelha */
         }
     </style>
 </head>
@@ -199,6 +244,13 @@
             <img src="img/simb.png" alt="Logo da Lara Teca">
             Lara Teca
         </a>
+        <!-- Container do campo de pesquisa -->
+        <div class="search-container">
+            <!-- Campo de texto -->
+            <input type="text" class="search-input" placeholder="Pesquisar...">
+            <!-- Ícone de pesquisa -->
+            <i class="fas fa-search search-icon"></i>
+        </div>
     </nav>
 
     <!-- Conteúdo da Página -->
@@ -226,24 +278,30 @@
                         <i class="fas fa-users"></i> Leitores
                     </a>
                     <ul class="submenu list-group">
-                        <li class="list-group-item list-group-item-action"><i class="fas fa-user-plus"></i> Criar Leitores</li>
-                        <li class="list-group-item list-group-item-action"><i class="fas fa-user-edit"></i> Atualizar Leitores</li>
-                        <li class="list-group-item list-group-item-action"><i class="fas fa-user-times"></i> Excluir Leitores</li>
+                        <li class="list-group-item list-group-item-action"><i class="fas fa-user-plus"></i> Criar
+                            Leitores</li>
+                        <li class="list-group-item list-group-item-action"><i class="fas fa-user-edit"></i> Atualizar
+                            Leitores</li>
+                        <li class="list-group-item list-group-item-action"><i class="fas fa-user-times"></i> Excluir
+                            Leitores</li>
                         <!-- Adicione mais operações conforme necessário -->
                     </ul>
-                    
+
                     {{--  EMPRESTIMOS  --}}
 
                     <a href="#" class="list-group-item list-group-item-action">
                         <i class="fas fa-handshake"></i> Empréstimos
                     </a>
                     <ul class="submenu list-group">
-                        <li class="list-group-item list-group-item-action"><i class="fas fa-plus"></i> Criar Empréstimos</li>
-                        <li class="list-group-item list-group-item-action"><i class="fas fa-sync-alt"></i> Atualizar Empréstimos</li>
-                        <li class="list-group-item list-group-item-action"><i class="fas fa-trash-alt"></i> Excluir Empréstimos</li>
+                        <li class="list-group-item list-group-item-action"><i class="fas fa-plus"></i> Criar Empréstimos
+                        </li>
+                        <li class="list-group-item list-group-item-action"><i class="fas fa-sync-alt"></i> Atualizar
+                            Empréstimos</li>
+                        <li class="list-group-item list-group-item-action"><i class="fas fa-trash-alt"></i> Excluir
+                            Empréstimos</li>
                         <!-- Adicione mais operações conforme necessário -->
                     </ul>
-                    
+
 
                     {{--  AUTORES  --}}
 
@@ -251,12 +309,15 @@
                         <i class="fas fa-user"></i> Autores
                     </a>
                     <ul class="submenu list-group">
-                        <li class="list-group-item list-group-item-action"><i class="fas fa-plus"></i> Criar Autores</li>
-                        <li class="list-group-item list-group-item-action"><i class="fas fa-sync-alt"></i> Atualizar Autores</li>
-                        <li class="list-group-item list-group-item-action"><i class="fas fa-trash-alt"></i> Excluir Autores</li>
+                        <li class="list-group-item list-group-item-action"><i class="fas fa-plus"></i> Criar Autores
+                        </li>
+                        <li class="list-group-item list-group-item-action"><i class="fas fa-sync-alt"></i> Atualizar
+                            Autores</li>
+                        <li class="list-group-item list-group-item-action"><i class="fas fa-trash-alt"></i> Excluir
+                            Autores</li>
                         <!-- Adicione mais operações conforme necessário -->
                     </ul>
-                    
+
 
                     <!-- Adicione mais operações conforme necessário -->
                 </ul>
@@ -323,9 +384,27 @@
     <!-- Bootstrap JS (opcional, se necessário) -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // Mostrar/ocultar a seção de livros ao clicar em "Livros" na barra lateral
-        document.querySelector('.list-group-item[href="#"]').addEventListener('click', function() {
-            document.getElementById('livros-section').style.display = 'block';
+        // Seleciona todos os itens de menu com submenu
+        // Seleciona todos os itens de menu com submenu
+        const menuItems = document.querySelectorAll('.list-group-item');
+
+        // Adiciona um ouvinte de evento para cada item de menu
+        menuItems.forEach(item => {
+            // Verifica se o item de menu possui submenu
+            const submenu = item.nextElementSibling;
+            if (submenu && submenu.classList.contains('submenu')) {
+                // Adiciona um ouvinte de evento para o evento mouseenter (quando o mouse entra no item de menu)
+                item.addEventListener('mouseenter', () => {
+                    // Adiciona uma classe ao item de menu para aplicar o estilo da linha vermelha
+                    item.classList.add('submenu-hover');
+                });
+
+                // Adiciona um ouvinte de evento para o evento mouseleave (quando o mouse deixa o item de menu)
+                submenu.addEventListener('mouseleave', () => {
+                    // Remove a classe do item de menu quando o mouse sai do submenu
+                    item.classList.remove('submenu-hover');
+                });
+            }
         });
     </script>
 </body>
