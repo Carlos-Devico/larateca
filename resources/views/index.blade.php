@@ -39,7 +39,7 @@
 
 
         .navbar-brand img {
-            max-width: 45px;
+            max-width: 45pdddx;
             vertical-align: middle;
         }
 
