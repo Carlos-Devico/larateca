@@ -6,7 +6,7 @@ use App\Http\Controllers\EmprestimoController;
 use App\Http\Controllers\AutorController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [LivroController::class, 'index']);
+
 Route::get('/livros', [LivroController::class, 'index']);
 Route::get('/livros/{livro}', [LivroController::class, 'show']);
 Route::post('/livros', [LivroController::class, 'store']);
