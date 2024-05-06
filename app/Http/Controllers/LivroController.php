@@ -10,11 +10,12 @@ use Illuminate\Http\Request;
 class LivroController extends Controller
 {
    public function index(){
-     // Método para listar todos os livros
-     $livros = Livro::all();
+     // lista todos os livros
+     $livros = Livro::paginate(3);
     
      // Retorna a view 'livros.blade.php' com os dados dos livros
     // livros.livros =  ('pastaDentroDeView.arquivoBlade')
+   //   return view('livros.livros', compact('livros'));
      return view('livros.livros', ['livros' => $livros]);
    }
 
