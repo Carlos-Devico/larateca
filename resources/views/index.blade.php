@@ -37,14 +37,15 @@
             /* Cor do texto */
         }
 
-        
+
         .navbar-brand img {
             max-width: 45px;
             vertical-align: middle;
         }
-        
-        
+
+
         {{--  NAVBAR AQUI  --}}
+
         /* Estilos da barra de navegação */
         .navbar {
             background: linear-gradient(to bottom right, #240947, #371b5c);
@@ -66,7 +67,7 @@
 
         /* Estilos do ícone de pesquisa */
         .search-icon {
-           
+
             margin-top: 20px;
             margin-right: 16px;
             margin-left: 16px;
@@ -334,7 +335,7 @@
                             <div class="card gradient-1">
                                 <div class="card-body">
                                     <h5 class="card-title">Total de Leitores</h5>
-                                    <p class="card-text">100</p>
+                                    {{ App\Models\Leitor::count() }}
                                 </div>
                             </div>
                         </div>
@@ -344,7 +345,9 @@
                             <div class="card gradient-2">
                                 <div class="card-body">
                                     <h5 class="card-title">Total de Livros</h5>
-                                    <p class="card-text">500</p>
+                                    <p class="card-text">
+                                        {{ App\Models\Livro::count() }} 
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -354,7 +357,7 @@
                             <div class="card gradient-3">
                                 <div class="card-body">
                                     <h5 class="card-title">Empréstimos Ativos</h5>
-                                    <p class="card-text">50</p>
+                                    {{ App\Models\Emprestimo::count() }}
                                 </div>
                             </div>
                         </div>
