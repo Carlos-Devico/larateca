@@ -33,12 +33,56 @@
                 @endforeach
             </tbody>
         </table>
-        <div class="card-footer">
-            {{ $livros->links('vendor.pagination.simple-bootstrap-4') }}
+        <!-- Container para envolver a navegação da página -->
+        <div class="container">
+            <!-- Navegação da página -->
+            <nav aria-label="Page navigation">
+                <!-- Lista de paginação -->
+                <ul class="pagination">
+                    <!-- Link para a página anterior -->
+                    <!-- Se estiver na primeira página, desativar o link -->
+                    @if ($livros->onFirstPage())
+                        <li class="page-item disabled">
+                            <span class="page-link">&laquo;</span>
+                        </li>
+                        <!-- Caso contrário, criar link para a página anterior -->
+                    @else
+                        <li class="page-item">
+                            <a class="page-link" href="{{ $livros->url($livros->currentPage() - 1) }}"
+                                rel="prev">&laquo;</a>
+                        </li>
+                    @endif
 
+                    <!-- Loop para criar links para cada página -->
+                    @for ($page = 1; $page <= $livros->lastPage(); $page++)
+                        <!-- Marcar a página atual com a classe 'active' -->
+                        <li class="page-item{{ $page == $livros->currentPage() ? ' active' : '' }}">
+                            <!-- Link para a página específica -->
+                            <a class="page-link" href="{{ $livros->url($page) }}">{{ $page }}</a>
+                        </li>
+                    @endfor
+
+                    <!-- Link para a próxima página -->
+                    <!-- Se não houver próxima página, desativar o link -->
+                    @if ($livros->hasMorePages())
+                        <li class="page-item">
+                            <a class="page-link" href="{{ $livros->url($livros->currentPage() + 1) }}"
+                                rel="next">&raquo;</a>
+                        </li>
+                        <!-- Caso contrário, desativar o link -->
+                    @else
+                        <li class="page-item disabled">
+                            <span class="page-link">&raquo;</span>
+                        </li>
+                    @endif
+                </ul>
+            </nav>
         </div>
+
+
+
     </div>
-    <script src="{{asset('js/app.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
 </body>
 
 </html>
