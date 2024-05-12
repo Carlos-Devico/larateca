@@ -7,14 +7,7 @@
     <title>@yield('title')</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('/favicon.ico') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/favicon-16x16.png') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('/apple-touch-icon.png') }}">
-    <link rel="manifest" href="{{ asset('/site.webmanifest') }}">
-    <link rel="mask-icon" href="{{ asset('/safari-pinned-tab.svg') }}" color="#7b4594">
-    <meta name="msapplication-TileColor" content="#7b4594">
-    <meta name="theme-color" content="#7b4594">
+    <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico">
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -31,7 +24,7 @@
     <!-- Cabeçalho de Navegação -->
     <nav class="navbar navbar-dark">
         <a class="navbar-brand" href="#">
-            <img src="img/simb.png" alt="Logo da Lara Teca">
+            <img src="/img/simb.png" alt="Logo da Lara Teca">
             Lara Teca
         </a>
         <!-- Container do campo de pesquisa -->
@@ -47,7 +40,7 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Menu de Operações (lado esquerdo) -->
-            <div class="col-md-3 list-group text-light full-height">
+            <div class="col-md-2 list-group text-light full-height">
                 <h3 class="mt-3">Operações</h3>
                 <ul class="list-group">
                     <a href="" class="list-group-item list-group-item-action">
@@ -114,25 +107,27 @@
             </div>
 
             <!-- Conteúdo Principal (lado direito) -->
-            <div class="col-md-9 mt-3">
+            <div class=" col-md-10 mt-3">
                 <div class="container">
-                    <h2>Dashboard</h2>
+                    <h2>Indicadores</h2>
                     <!-- Conteúdo do Dashboard -->
                     <div class="row">
                         <!-- Card de Leitores -->
                         <div class="col-md-3">
-                            <div class="card gradient-1">
+                            <div class="card">
                                 <div class="card-body">
+                                    <img src="/img/reader.png" class="card-img-top" alt="Imagem de Leitores">
                                     <h5 class="card-title">Total de Leitores</h5>
                                     {{ App\Models\Leitor::count() }}
                                 </div>
                             </div>
                         </div>
-
+                    
                         <!-- Card de Livros -->
                         <div class="col-md-3">
-                            <div class="card gradient-2">
+                            <div class="card">
                                 <div class="card-body">
+                                    <img src="/img/books.png" class="card-img-top" alt="Imagem de Leitores">
                                     <h5 class="card-title">Total de Livros</h5>
                                     <p class="card-text">
                                         {{ App\Models\Livro::count() }}
@@ -140,27 +135,30 @@
                                 </div>
                             </div>
                         </div>
-
+                    
                         <!-- Card de Empréstimos -->
                         <div class="col-md-3">
-                            <div class="card gradient-3">
+                            <div class="card">
                                 <div class="card-body">
+                                    <img src="/img/planning.png" class="card-img-top" alt="Imagem de Leitores">
                                     <h5 class="card-title">Empréstimos Ativos</h5>
                                     {{ App\Models\Emprestimo::count() }}
                                 </div>
                             </div>
                         </div>
-
+                    
                         <!-- Card de Livros Disponíveis -->
                         <div class="col-md-3">
-                            <div class="card gradient-4">
+                            <div class="card">
                                 <div class="card-body">
+                                    <img src="/img/available.png" class="card-img-top" alt="Imagem de Leitores">
                                     <h5 class="card-title">Livros Disponíveis</h5>
-                                    <p class="card-text">200</p>
+                                    {{ App\Models\Livro::count() }}
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
 
                     {{--  DISPALY CRUD  --}}
                     {{--  diretiva @section é usada para definir o conteúdo de uma seção  --}}
