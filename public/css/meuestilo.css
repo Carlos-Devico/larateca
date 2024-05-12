@@ -1,0 +1,211 @@
+        /* Estilo personalizado */
+        body {
+          font-family: 'Poppins', sans-serif;
+          background: linear-gradient(to bottom right, #933EFF 5%, #770fbd 56%, #582599 100%);
+          /* Cor de fundo do corpo */
+          color: #dc1d30;
+          /* Cor do texto */
+      }
+
+
+      .navbar-brand img {
+          max-width: 45pdddx;
+          vertical-align: middle;
+      }
+      /* NAVBAR */
+
+      /* Estilos da barra de navegação */
+      .navbar {
+          background: linear-gradient(to bottom right, #240947, #371b5c);
+          padding: 10px;
+      }
+
+      /* Estilos do campo de pesquisa */
+      .search-container {
+          float: right;
+      }
+
+      /* Estilos do campo de texto */
+      .search-input {
+          padding: 8px;
+          margin-top: 8px;
+          border: none;
+          border-radius: 5px;
+      }
+
+      /* Estilos do ícone de pesquisa */
+      .search-icon {
+
+          margin-top: 20px;
+          margin-right: 16px;
+          margin-left: 16px;
+          color: rgb(190, 31, 31);
+      }
+
+      /* Estilo do ícone de pesquisa quando hover */
+      .search-icon:hover {
+          color: #d85f0e;
+          /* Altere a cor conforme necessário */
+          cursor: pointer;
+      }
+
+      .list-group {
+          background: linear-gradient(to bottom right, #933EFF 5%, #5f3a8b 56%, #461587 100%);
+          /* Altera a cor do navbar */
+          padding-left: 10px;
+      }
+
+      @font-face {
+          font-family: 'Beasley';
+          src: url('/fonts/beasley.ttf') format('truetype');
+      }
+
+      .navbar-brand {
+          font-family: 'Beasley', sans-serif;
+          font-size: 2rem;
+          color: #dc1d30;
+          /* Cor do texto */
+      }
+
+      .footer {
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+          background: linear-gradient(to bottom right, #240947, #371b5c);
+          color: #dc1d30;
+          text-align: center;
+          padding: 10px 0;
+      }
+
+      .full-height {
+          height: 100vh;
+      }
+
+      .submenu {
+          display: none;
+          /* Inicialmente oculta o submenu */
+          transition: all 0.3s ease;
+      }
+
+      .list-group-item:hover+.submenu,
+      .submenu:hover {
+          display: block;
+          /* Mostra o submenu quando o item principal for hover ou quando o submenu for hover */
+      }
+
+      /* Transição suave para o submenu */
+      .submenu {
+          transition: all 0.3s ease;
+      }
+
+      /* criar o brilho ao passar o mouse */
+      .list-group-item:hover {
+          background-color: #9a80f9;
+          /* Altere a cor conforme necessário */
+          transition: background-color 0.3s ease;
+      }
+
+      /* criar efeito de tremor ao ser selecionado */
+      .list-group-item:active {
+          animation: shake 0.5s;
+          /* Utiliza a animação "shake" */
+      }
+
+      /* --- Criar o tremor --- */
+      @keyframes shake {
+          0% {
+              transform: translateX(0);
+          }
+
+          25% {
+              transform: translateX(-5px);
+          }
+
+          50% {
+              transform: translateX(5px);
+          }
+
+          75% {
+              transform: translateX(-5px);
+          }
+
+          100% {
+              transform: translateX(0);
+          }
+      }
+
+      /* set geral para os cards */
+      .card {
+          margin-bottom: 20px;
+          height: 120px;
+          position: relative;
+          border-radius: 15px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          transition: box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+      }
+
+      /* Estilo para o conteúdo dos cards */
+      .card-body {
+          color: white;
+          text-align: center;
+          padding: 15px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          /* Adiciona sombra ao texto */
+      }
+
+      .card-title {
+          font-size: 1.2rem;
+      }
+
+      .card-text {
+          font-size: 1rem;
+      }
+
+      /* Estilos para os cards gradientes */
+      .gradient-1 {
+          background: linear-gradient(45deg, #386666, #5e9596);
+
+
+          background: linear-gradient(45deg, #95ff00, #5e9596);
+          ;
+          /* Gradiente 1 */
+      }
+
+      .gradient-2 {
+          background: linear-gradient(45deg, #dc1d30, #161e23);
+          /* Gradiente 2 */
+      }
+
+      .gradient-3 {
+          background: linear-gradient(45deg, #FFDAD9, #5D3F3F);
+          /* Gradiente 3 */
+      }
+
+      .gradient-4 {
+          background: linear-gradient(45deg, #dc1d30, #ff6347);
+          /* Gradiente 4 */
+      }
+
+      /* Estilo da linha vermelha na lateral esquerda do menu quando o mouse estiver sobre um item do submenu */
+      .list-group-item.submenu-hover::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 10px;
+          /* Largura da linha */
+          background-color: #95ff00;
+          /* Cor da linha vermelha */
+      }
+
+      .crudview{
+        height: 700px;
+        background: linear-gradient(90deg, rgba(131,58,180,0.5) 0%, rgba(253,29,29,0.2) 50%, rgba(252,176,69,1) 100%);
+        padding: 10px;
+      }

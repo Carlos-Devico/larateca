@@ -6,26 +6,25 @@ namespace App\Http\Controllers;
 use App\Models\Livro;
 use Illuminate\Http\Request;
 
-
 class LivroController extends Controller
 {
-   public function index(){
-     // lista todos os livros
-     $livros = Livro::paginate(3);
-    
-     // Retorna a view 'livros.blade.php' com os dados dos livros
-    // livros.livros =  ('pastaDentroDeView.arquivoBlade')
-   //   return view('livros.livros', compact('livros'));
-     return view('livros.livros', ['livros' => $livros]);
-   }
+    public function index()
+    {
+        // Lista todos os livros (assumindo que $livros é uma coleção paginada)
+        $livros = Livro::paginate(3);
 
-//    Método para exibir um livro especifico
-   public function show($id)
-   {
-    $livro = Livro::findOrFail($id);
-    return response()->json($livro);
-   }
-// ============= PAREI AQUI ===========
+        // Retorna a view com os dados
+        return view('livros.livros', ['livros' => $livros]);
+        // dd($livros);
+    }
+
+    public function show($id)
+    {
+        $livro = Livro::findOrFail($id);
+        return response()->json($livro);
+    }
+
+  // ============= PAREI AQUI ===========
 
   //  // Método para armazenar um novo livro
   //  public function store(Request $request)
@@ -50,7 +49,7 @@ class LivroController extends Controller
   //      return response()->json(null, 204);
   //  }
 
- 
 
-    
+
+
 }

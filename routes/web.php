@@ -7,6 +7,7 @@ use App\Http\Controllers\AutorController;
 use Illuminate\Support\Facades\Route;
 
 
+Route::get('/', [LivroController::class, 'index']);
 Route::get('/livros', [LivroController::class, 'index']);
 Route::get('/livros/{livro}', [LivroController::class, 'show']);
 Route::post('/livros', [LivroController::class, 'store']);
@@ -32,6 +33,3 @@ Route::put('/autores/{autor}', [AutorController::class, 'update']);
 Route::delete('/autores/{autor}', [AutorController::class, 'destroy']);
 
 
-Route::get('/', function () {
-    return view('index');
-});

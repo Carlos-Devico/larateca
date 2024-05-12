@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LaraTeca</title>
+    <title>@yield('title')</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('/favicon.ico') }}">
@@ -18,224 +18,13 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/meuestilo.css">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-
-
-    <style>
-        /* Estilo personalizado */
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to bottom right, #933EFF 5%, #770fbd 56%, #582599 100%);
-            /* Cor de fundo do corpo */
-            color: #dc1d30;
-            /* Cor do texto */
-        }
-
-
-        .navbar-brand img {
-            max-width: 45pdddx;
-            vertical-align: middle;
-        }
-
-
-        {{--  NAVBAR AQUI  --}}
-
-        /* Estilos da barra de navegação */
-        .navbar {
-            background: linear-gradient(to bottom right, #240947, #371b5c);
-            padding: 10px;
-        }
-
-        /* Estilos do campo de pesquisa */
-        .search-container {
-            float: right;
-        }
-
-        /* Estilos do campo de texto */
-        .search-input {
-            padding: 8px;
-            margin-top: 8px;
-            border: none;
-            border-radius: 5px;
-        }
-
-        /* Estilos do ícone de pesquisa */
-        .search-icon {
-
-            margin-top: 20px;
-            margin-right: 16px;
-            margin-left: 16px;
-            color: rgb(190, 31, 31);
-        }
-
-        /* Estilo do ícone de pesquisa quando hover */
-        .search-icon:hover {
-            color: #d85f0e;
-            /* Altere a cor conforme necessário */
-            cursor: pointer;
-        }
-
-        .list-group {
-            background: linear-gradient(to bottom right, #933EFF 5%, #5f3a8b 56%, #461587 100%);
-            /* Altera a cor do navbar */
-            padding-left: 10px;
-        }
-
-        @font-face {
-            font-family: 'Beasley';
-            src: url('/fonts/beasley.ttf') format('truetype');
-        }
-
-        .navbar-brand {
-            font-family: 'Beasley', sans-serif;
-            font-size: 2rem;
-            color: #dc1d30;
-            /* Cor do texto */
-        }
-
-        .footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: linear-gradient(to bottom right, #240947, #371b5c);
-            color: #dc1d30;
-            text-align: center;
-            padding: 10px 0;
-        }
-
-        .full-height {
-            height: 100vh;
-        }
-
-        .submenu {
-            display: none;
-            /* Inicialmente oculta o submenu */
-            transition: all 0.3s ease;
-        }
-
-        .list-group-item:hover+.submenu,
-        .submenu:hover {
-            display: block;
-            /* Mostra o submenu quando o item principal for hover ou quando o submenu for hover */
-        }
-
-        /* Transição suave para o submenu */
-        .submenu {
-            transition: all 0.3s ease;
-        }
-
-        /* criar o brilho ao passar o mouse */
-        .list-group-item:hover {
-            background-color: #9a80f9;
-            /* Altere a cor conforme necessário */
-            transition: background-color 0.3s ease;
-        }
-
-        /* criar efeito de tremor ao ser selecionado */
-        .list-group-item:active {
-            animation: shake 0.5s;
-            /* Utiliza a animação "shake" */
-        }
-
-        /* --- Criar o tremor --- */
-        @keyframes shake {
-            0% {
-                transform: translateX(0);
-            }
-
-            25% {
-                transform: translateX(-5px);
-            }
-
-            50% {
-                transform: translateX(5px);
-            }
-
-            75% {
-                transform: translateX(-5px);
-            }
-
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        /* set geral para os cards */
-        .card {
-            margin-bottom: 20px;
-            height: 120px;
-            position: relative;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-
-        }
-
-        /* Estilo para o conteúdo dos cards */
-        .card-body {
-            color: white;
-            text-align: center;
-            padding: 15px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            /* Adiciona sombra ao texto */
-        }
-
-        .card-title {
-            font-size: 1.2rem;
-        }
-
-        .card-text {
-            font-size: 1rem;
-        }
-
-        /* Estilos para os cards gradientes */
-        .gradient-1 {
-            background: linear-gradient(45deg, #386666, #5e9596);
-
-
-            background: linear-gradient(45deg, #95ff00, #5e9596);
-            ;
-            /* Gradiente 1 */
-        }
-
-        .gradient-2 {
-            background: linear-gradient(45deg, #dc1d30, #161e23);
-            /* Gradiente 2 */
-        }
-
-        .gradient-3 {
-            background: linear-gradient(45deg, #FFDAD9, #5D3F3F);
-            /* Gradiente 3 */
-        }
-
-        .gradient-4 {
-            background: linear-gradient(45deg, #dc1d30, #ff6347);
-            /* Gradiente 4 */
-        }
-
-        /* Estilo da linha vermelha na lateral esquerda do menu quando o mouse estiver sobre um item do submenu */
-        .list-group-item.submenu-hover::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 10px;
-            /* Largura da linha */
-            background-color: #95ff00;
-            /* Cor da linha vermelha */
-        }
-    </style>
 </head>
 
 <body>
@@ -261,7 +50,7 @@
             <div class="col-md-3 list-group text-light full-height">
                 <h3 class="mt-3">Operações</h3>
                 <ul class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="" class="list-group-item list-group-item-action">
                         <i class="fas fa-book"></i> Livros
                     </a>
                     <ul class="submenu list-group">
@@ -346,7 +135,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">Total de Livros</h5>
                                     <p class="card-text">
-                                        {{ App\Models\Livro::count() }} 
+                                        {{ App\Models\Livro::count() }}
                                     </p>
                                 </div>
                             </div>
@@ -372,6 +161,14 @@
                             </div>
                         </div>
                     </div>
+
+                    {{--  DISPALY CRUD  --}}
+                    {{--  diretiva @section é usada para definir o conteúdo de uma seção  --}}
+                    <div class="container">
+                        <h1 class="mt-5">Lista de Livros</h1>
+                        <!-- Conteúdo da seção 'content' -->
+                        @yield('content')
+                    </div>
                 </div>
             </div>
         </div>
@@ -380,14 +177,13 @@
     <!-- Rodapé -->
     <footer class="footer">
         <div class="container">
-            <span>Desenvolvido por Carlos Vieira</span>
+            <span>Desenvolvido por Carlos Vieira &copy; 2024</span>
         </div>
     </footer>
 
     <!-- Bootstrap JS (opcional, se necessário) -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        // Seleciona todos os itens de menu com submenu
         // Seleciona todos os itens de menu com submenu
         const menuItems = document.querySelectorAll('.list-group-item');
 
