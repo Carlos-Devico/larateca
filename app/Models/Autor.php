@@ -1,15 +1,18 @@
 <?php
 
+// app/Models/Autor.php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Autor extends Model
 {
-    protected $fillable = ['nome'];
+    protected $table = 'autores';
+    protected $fillable = ['nome', 'idade'];
 
     public function livros()
     {
-        return $this->belongsTo('App\Models\Livro');
+        return $this->hasMany(Livro::class);
     }
 }

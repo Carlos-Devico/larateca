@@ -6,26 +6,22 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateLivrosTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
         Schema::create('livros', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
-            $table->string('isbn')->unique();
+            $table->string('isbn');
             $table->string('genero');
-            $table->integer('paginas');
+            $table->integer('numero_paginas');
+            $table->integer('ano_lancamento');
+            $table->foreignId('autor_id')->constrained('autores');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('livros');
     }
-};
+}

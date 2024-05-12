@@ -1,19 +1,22 @@
 <?php
 
+// app/Models/Livro.php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Livro extends Model
 {
+    protected $fillable = ['titulo', 'genero', 'numero_paginas', 'ano_lancamento', 'autor_id'];
 
-    protected $fillable = ['titulo', 'isbn', 'genero','paginas'];
-
-    public function autores() {
-        return $this->belongsToMany('App\Models\Autor');
+    public function autor()
+    {
+        return $this->belongsTo(Autor::class);
     }
 
-    public function emprestimos() {
-        return $this->hasMany('App\Models\Emprestimo');
+    public function emprestimos()
+    {
+        return $this->hasMany(Emprestimo::class);
     }
 }

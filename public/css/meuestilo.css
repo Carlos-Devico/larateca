@@ -7,7 +7,9 @@
           ;
           /* Cor do texto */
         }
+span {
 
+}
 
         .navbar-brand img {
           max-width: 30px;
@@ -20,6 +22,7 @@
         .navbar {
           background: #D2DBE0;
           padding: 10px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
         }
 
         /* Estilos do campo de pesquisa */
@@ -51,7 +54,7 @@
         }
 
         .list-group {
-          background: #9e8e90;
+          background: #bccad8;
           /* Altera a cor do navbar */
           padding-left: 10px;
         }
@@ -78,6 +81,8 @@
           color: #dc1d30;
           text-align: center;
           padding: 10px 0;
+          box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);
+          
         }
 
         .full-height {
@@ -140,12 +145,11 @@
         /* set geral para os cards */
         .card {
           margin-bottom: 20px;
-          height: 100px;
+          height: 110px;
           position: relative;
           border-radius: 10px;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
           transition: box-shadow 0.3s ease;
-
         }
 
         .card-body {
@@ -172,11 +176,13 @@
           /* Definindo a largura da imagem como 100% do container pai (o card) */
           height: 30px;
           /* Mantém a proporção da imagem */
+          margin-bottom: 8px;
         }
 
         .card-title {
           margin-bottom: 10px;
           /* Space between title and text */
+          
         }
 
         .card-text,
@@ -215,14 +221,8 @@
           /* Cor da linha vermelha */
         }
 
-        .crudview {
-          height: 700px;
-          background: linear-gradient(90deg, rgba(131, 58, 180, 0.5) 0%, rgba(253, 29, 29, 0.2) 50%, rgba(252, 176, 69, 1) 100%);
-          padding: 10px;
-        }
-
         /* TABELA */
-        /* tabela */
+      
         /* Estilo para a tabela de livros */
 
         .container {

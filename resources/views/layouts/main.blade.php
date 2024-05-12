@@ -25,7 +25,7 @@
     <nav class="navbar navbar-dark">
         <a class="navbar-brand" href="#">
             <img src="/img/simb.png" alt="Logo da Lara Teca">
-            Lara Teca
+            <span>Lara Teca</span>
         </a>
         <!-- Container do campo de pesquisa -->
         <div class="search-container">
@@ -117,7 +117,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <img src="/img/reader.png" class="card-img-top" alt="Imagem de Leitores">
-                                    <h5 class="card-title">Total de Leitores</h5>
+                                    <h5 class="card-title"><strong>Total de Leitores</strong></h5>
                                     {{ App\Models\Leitor::count() }}
                                 </div>
                             </div>
@@ -128,7 +128,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <img src="/img/books.png" class="card-img-top" alt="Imagem de Leitores">
-                                    <h5 class="card-title">Total de Livros</h5>
+                                    <h5 class="card-title"><strong>Total de Livros</strong></h5>
                                     <p class="card-text">
                                         {{ App\Models\Livro::count() }}
                                     </p>
@@ -141,7 +141,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <img src="/img/planning.png" class="card-img-top" alt="Imagem de Leitores">
-                                    <h5 class="card-title">Empréstimos Ativos</h5>
+                                    <h5 class="card-title"><strong>Empréstimos Ativos</strong></h5>
                                     {{ App\Models\Emprestimo::count() }}
                                 </div>
                             </div>
@@ -152,7 +152,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <img src="/img/available.png" class="card-img-top" alt="Imagem de Leitores">
-                                    <h5 class="card-title">Livros Disponíveis</h5>
+                                    <h5 class="card-title"><strong>Livros Disponíveis</strong></h5>
                                     {{ App\Models\Livro::count() }}
                                 </div>
                             </div>

@@ -12,6 +12,8 @@
                     <th>ISBN</th>
                     <th>Gênero</th>
                     <th>Páginas</th>
+                    <th>Ano de Lançamento</th>
+                    <th>Autor</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,13 +24,14 @@
                             <td>{{ $livro->titulo }}</td>
                             <td>{{ $livro->isbn }}</td>
                             <td>{{ $livro->genero }}</td>
-                            <td>{{ $livro->paginas }}</td>
+                            <td>{{ $livro->numero_paginas }}</td>
+                            <td>{{ $livro->ano_lancamento }}</td>
+                            <td>{{ $livro->autor->nome }}</td>
                         </tr>
-                        {{--  @dump($livro)  --}}
                     @endforeach
                 @else
                     <tr>
-                        <td colspan="5">Nenhum livro encontrado.</td>
+                        <td colspan="7">Nenhum livro encontrado.</td>
                     </tr>
                 @endif
             </tbody>
