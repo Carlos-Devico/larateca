@@ -2,40 +2,40 @@
 @section('title', 'Livros')
 @section('content')
 
-    <div class="container">
+<div class="container">
         
-        <table class="table mt-3">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Título</th>
-                    <th>ISBN</th>
-                    <th>Gênero</th>
-                    <th>Páginas</th>
-                    <th>Ano de Lançamento</th>
-                    <th>Autor</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if ($livros->count())
-                    @foreach ($livros as $livro)
-                        <tr>
-                            <td>{{ $livro->id }}</td>
-                            <td>{{ $livro->titulo }}</td>
-                            <td>{{ $livro->isbn }}</td>
-                            <td>{{ $livro->genero }}</td>
-                            <td>{{ $livro->numero_paginas }}</td>
-                            <td>{{ $livro->ano_lancamento }}</td>
-                            <td>{{ $livro->autor->nome }}</td>
-                        </tr>
-                    @endforeach
-                @else
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Título</th>
+                <th>ISBN</th>
+                <th>Gênero</th>
+                <th>Páginas</th>
+                <th>Status</th>
+                <th>Autor</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if ($livros->count())
+                @foreach ($livros as $livro)
                     <tr>
-                        <td colspan="7">Nenhum livro encontrado.</td>
+                        <td>{{ $livro->id }}</td>
+                        <td>{{ $livro->titulo }}</td>
+                        <td>{{ $livro->isbn }}</td>
+                        <td>{{ $livro->genero }}</td>
+                        <td>{{ $livro->numero_paginas }}</td>
+                        <td>{{ $livro->status }}</td> <!-- Aqui exibimos o status -->
+                        <td>{{ $livro->autor->nome }}</td>
                     </tr>
-                @endif
-            </tbody>
-        </table>
+                @endforeach
+            @else
+                <tr>
+                    <td colspan="8">Nenhum livro encontrado.</td>
+                </tr>
+            @endif
+        </tbody>
+    </table>
 
         <div class="container">
             <nav aria-label="Paginação">

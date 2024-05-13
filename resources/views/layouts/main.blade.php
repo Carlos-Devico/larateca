@@ -162,8 +162,8 @@
 
                     {{--  DISPALY CRUD  --}}
                     {{--  diretiva @section é usada para definir o conteúdo de uma seção  --}}
-                    <div class="container">
-                        <h1 class="mt-5">Lista de Livros</h1>
+                    <div class="container-fluid horizontal">
+                        <h1>Lista de Livros</h1>
                         <!-- Conteúdo da seção 'content' -->
                         @yield('content')
                     </div>
