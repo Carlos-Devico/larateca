@@ -14,16 +14,16 @@ return new class extends Migration
     {
         // Populando a tabela "livros"
         DB::table('livros')->insert([
-            ['titulo' => 'O Senhor dos Anéis', 'isbn' => '978-0-261-10242-2', 'genero' => 'Fantasia', 'numero_paginas' => 250, 'ano_lancamento' => 1954, 'autor_id' => 1],
-            ['titulo' => 'Harry Potter e a Pedra Filosofal', 'isbn' => '978-85-325-3387-8', 'genero' => 'Fantasia', 'numero_paginas' => 500, 'ano_lancamento' => 1997, 'autor_id' => 2],
-            ['titulo' => '1984', 'isbn' => '978-85-325-2890-4', 'genero' => 'Ficção Científica', 'numero_paginas' => 412, 'ano_lancamento' => 1949, 'autor_id' => 3],
-            ['titulo' => 'Dom Casmurro', 'isbn' => '978-85-03-01594-4', 'genero' => 'Romance', 'numero_paginas' => 905, 'ano_lancamento' => 1899, 'autor_id' => 4],
-            ['titulo' => 'Orgulho e Preconceito', 'isbn' => '978-85-66701-56-4', 'genero' => 'Romance', 'numero_paginas' => 546, 'ano_lancamento' => 1813, 'autor_id' => 5],
-            ['titulo' => 'A Menina que Roubava Livros', 'isbn' => '978-85-8057-043-7', 'genero' => 'Drama', 'numero_paginas' => 584, 'ano_lancamento' => 2005, 'autor_id' => 6],
-            ['titulo' => 'O Hobbit', 'isbn' => '978-85-7536-400-2', 'genero' => 'Fantasia', 'numero_paginas' => 310, 'ano_lancamento' => 1937, 'autor_id' => 1],
-            ['titulo' => 'A Revolução dos Bichos', 'isbn' => '978-85-01-00765-7', 'genero' => 'Ficção', 'numero_paginas' => 152, 'ano_lancamento' => 1945, 'autor_id' => 3],
-            ['titulo' => 'A Cabana', 'isbn' => '978-85-64850-51-7', 'genero' => 'Ficção Cristã', 'numero_paginas' => 288, 'ano_lancamento' => 2007, 'autor_id' => 7],
-            ['titulo' => 'A Culpa é das Estrelas', 'isbn' => '978-85-7818-207-7', 'genero' => 'Drama', 'numero_paginas' => 288, 'ano_lancamento' => 2012, 'autor_id' => 8]
+            ['titulo' => 'O Senhor dos Anéis', 'isbn'=> '978-0-261-10242-2', 'genero' => 'Fantasia', 'numero_paginas' => 250, 'autor_id' => 1, 'status' => 'emprestado'],
+            ['titulo' => 'Harry Potter e a Pedra Filosofal', 'isbn'=> '978-85-325-3387-8', 'genero' => 'Fantasia', 'numero_paginas' => 500, 'autor_id' => 2, 'status' => 'disponível'],
+            ['titulo' => '1984', 'isbn'=> '978-85-325-2890-4', 'genero' => 'Ficção Científica', 'numero_paginas' => 412, 'autor_id' => 3, 'status' => 'emprestado'],
+            ['titulo' => 'Dom Casmurro', 'isbn'=> '978-85-03-01594-4', 'genero' => 'Romance', 'numero_paginas' => 905, 'autor_id' => 4, 'status' => 'emprestado'],
+            ['titulo' => 'Orgulho e Preconceito', 'isbn'=> '978-85-66701-56-4', 'genero' => 'Romance', 'numero_paginas' => 546, 'autor_id' => 5, 'status' => 'disponível'],
+            ['titulo' => 'A Menina que Roubava Livros', 'isbn'=> '978-85-8057-043-7', 'genero' => 'Drama', 'numero_paginas' => 584, 'autor_id' => 6, 'status' => 'emprestado'],
+            ['titulo' => 'O Hobbit', 'isbn'=> '978-85-7536-400-2', 'genero' => 'Fantasia', 'numero_paginas' => 310, 'autor_id' => 1, 'status' => 'emprestado'],
+            ['titulo' => 'A Revolução dos Bichos', 'isbn'=> '978-85-01-00765-7', 'genero' => 'Ficção', 'numero_paginas' => 152, 'autor_id' => 3, 'status' => 'emprestado'],
+            ['titulo' => 'A Cabana', 'isbn'=> '978-85-64850-51-7', 'genero' => 'Ficção Cristã', 'numero_paginas' => 288, 'autor_id' => 7, 'status' => 'emprestado'],
+            ['titulo' => 'A Culpa é das Estrelas', 'isbn'=> '978-85-7818-207-7', 'genero' => 'Drama', 'numero_paginas' => 288, 'autor_id' => 8, 'status' => 'disponível']
         ]);
 
 

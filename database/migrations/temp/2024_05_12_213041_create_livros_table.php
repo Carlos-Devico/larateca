@@ -14,8 +14,8 @@ class CreateLivrosTable extends Migration
             $table->string('isbn');
             $table->string('genero');
             $table->integer('numero_paginas');
-            $table->integer('ano_lancamento');
             $table->foreignId('autor_id')->constrained('autores');
+            $table->enum('status', ['disponivel', 'emprestado'])->default('disponivel');
             $table->timestamps();
         });
     }
