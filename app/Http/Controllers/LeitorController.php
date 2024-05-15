@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Leitor;
 
 class LeitorController extends Controller
 {
@@ -11,23 +12,32 @@ class LeitorController extends Controller
      */
     public function index()
     {
-        //
+        $leitores = Leitor::paginate(6);
+
+        // Retorna a view com os dados
+        return view('leitores.leitores', ['leitores' => $leitores]);
+        // dd($leitores);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    // Exibir o formulário de cadastro
     public function create()
     {
-        //
+        return view('leitores.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    // Processar o cadastro
     public function store(Request $request)
     {
-        //
+        // Validação dos dados
+        $validatedData = $request->validate([
+            'nome' => 'required|string|max:255',
+            'idade' => 'required|integer|min:0',
+            'email' => 'required|email|max:255|unique:leitores',
+        ]);
+        // Criação do novo leitor
+        Leitor::create($validatedData);
+        // Redirecionar ou retornar uma resposta
+        return redirect()->route('leitores.create')->with('success', 'Leitor cadastrado com sucesso!');
     }
 
     /**
