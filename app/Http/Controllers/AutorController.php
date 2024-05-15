@@ -12,7 +12,7 @@ class AutorController extends Controller
      */
     public function index()
     {
-       $autores = Autor::all();
+       $autores = Autor::paginate(3);
        return view('autores.autores', ['autores' => $autores]);
     }
 

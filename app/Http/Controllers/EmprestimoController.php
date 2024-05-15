@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Emprestimo;
 
 class EmprestimoController extends Controller
 {
@@ -11,7 +12,9 @@ class EmprestimoController extends Controller
      */
     public function index()
     {
-        //
+        $emprestimos = Emprestimo::paginate(3);
+        return view('emprestimos.emprestimos', ['emprestimos' => $emprestimos]);
+
     }
 
     /**

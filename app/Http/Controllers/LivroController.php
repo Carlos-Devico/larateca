@@ -15,7 +15,7 @@ class LivroController extends Controller
 
         // Retorna a view com os dados
         return view('livros.livros', ['livros' => $livros]);
-        // dd($livros);
+       
     }
 
     public function show($id)

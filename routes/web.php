@@ -11,5 +11,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('livros', LivroController::class);
 Route::resource('autores', AutorController::class);
-Route::resource('leitores', LeitorController::class);
+
+
+
+Route::get('/leitores', [LeitorController::class, 'index']);
+// Rota para exibir o formulário de cadastro de leitor (GET)
+Route::get('leitores/create', [LeitorController::class, 'create'])->name('leitores.create');
+
+// Rota para processar o cadastro de leitor (POST)
+Route::post('leitores', [LeitorController::class, 'store'])->name('leitores.store');
+
 Route::resource('emprestimos', EmprestimoController::class);

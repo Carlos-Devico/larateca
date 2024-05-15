@@ -43,7 +43,7 @@
             <div class="col-md-2 list-group text-light full-height">
                 <h3 class="mt-3">Operações</h3>
                 <ul class="list-group">
-                    <a href="" class="list-group-item list-group-item-action">
+                    <a href="/livros" class="list-group-item list-group-item-action">
                         <i class="fas fa-book"></i> Livros
                     </a>
                     <ul class="submenu list-group">
@@ -57,12 +57,11 @@
 
                     {{--  LEITORES  --}}
 
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="/leitores" class="list-group-item list-group-item-action">
                         <i class="fas fa-users"></i> Leitores
                     </a>
                     <ul class="submenu list-group">
-                        <li class="list-group-item list-group-item-action"><i class="fas fa-user-plus"></i> Criar
-                            Leitores</li>
+                        <li class="list-group-item list-group-item-action"><i class="fas fa-user-plus"></i> <a href="/leitores/create">Criar</a></li>
                         <li class="list-group-item list-group-item-action"><i class="fas fa-user-edit"></i> Atualizar
                             Leitores</li>
                         <li class="list-group-item list-group-item-action"><i class="fas fa-user-times"></i> Excluir
@@ -72,7 +71,7 @@
 
                     {{--  EMPRESTIMOS  --}}
 
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="/emprestimos" class="list-group-item list-group-item-action">
                         <i class="fas fa-handshake"></i> Empréstimos
                     </a>
                     <ul class="submenu list-group">
@@ -88,7 +87,7 @@
 
                     {{--  AUTORES  --}}
 
-                    <a href="#" class="list-group-item list-group-item-action">
+                    <a href="/autores" class="list-group-item list-group-item-action">
                         <i class="fas fa-user"></i> Autores
                     </a>
                     <ul class="submenu list-group">
@@ -163,7 +162,6 @@
                     {{--  DISPALY CRUD  --}}
                     {{--  diretiva @section é usada para definir o conteúdo de uma seção  --}}
                     <div class="container-fluid horizontal">
-                        <h1>Lista de Livros</h1>
                         <!-- Conteúdo da seção 'content' -->
                         @yield('content')
                     </div>
